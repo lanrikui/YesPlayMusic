@@ -249,6 +249,7 @@ export default {
     searchInPlaylist: '歌單內搜尋',
     openInBrowser: '在瀏覽器中打開',
     copyUrl: '複製連結',
+    download: '下載',
     allPlaylists: '全部歌單',
     minePlaylists: '我建立的歌單',
     likedPlaylists: '收藏的歌單',
@@ -259,6 +260,8 @@ export default {
   toast: {
     savedToPlaylist: '已新增至歌單',
     removedFromPlaylist: '已從歌單中刪除',
+    downloadStarted: '已開始下載',
+    downloadFailed: '下載失敗，此歌曲可能無法下載',
     savedToMyLikedSongs: '已新增至我喜歡的音樂',
     removedFromMyLikedSongs: '已從喜歡的音樂中刪除',
     copied: '已複製',

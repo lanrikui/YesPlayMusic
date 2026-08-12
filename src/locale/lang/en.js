@@ -252,6 +252,7 @@ export default {
     addToPlaylist: 'Add to playlist',
     searchInPlaylist: 'Search in playlist',
     copyUrl: 'Copy URL',
+    download: 'Download',
     openInBrowser: 'Open in Browser',
     allPlaylists: 'All Playlists',
     minePlaylists: 'My Playlists',
@@ -263,6 +264,8 @@ export default {
   toast: {
     savedToPlaylist: 'Saved to playlist',
     removedFromPlaylist: 'Removed from playlist',
+    downloadStarted: 'Download started',
+    downloadFailed: 'Download failed, this track may not be available',
     savedToMyLikedSongs: 'Saved to my Liked Songs',
     removedFromMyLikedSongs: 'Removed from my Liked Songs',
     copied: 'Copied',

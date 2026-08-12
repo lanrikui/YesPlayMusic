@@ -1,5 +1,6 @@
 import { app, dialog, globalShortcut, ipcMain } from 'electron';
 import UNM from '@unblockneteasemusic/rust-napi';
+import path from 'path';
 import { registerGlobalShortcut } from '@/electron/globalShortcut';
 import cloneDeep from 'lodash/cloneDeep';
 import shortcuts from '@/utils/shortcuts';
@@ -197,6 +198,20 @@ export function initIpcMain(win, store, trayEventEmitter) {
       }
     }
   );
+
+  ipcMain.handle('downloadTrack', (_, { url, filename }) => {
+    return new Promise((resolve, reject) => {
+      const timeout = setTimeout(() => {
+        reject(new Error('download did not start in time'));
+      }, 15000);
+      win.webContents.session.once('will-download', (event, item) => {
+        clearTimeout(timeout);
+        item.setSavePath(path.join(app.getPath('downloads'), filename));
+        resolve();
+      });
+      win.webContents.downloadURL(url);
+    });
+  });
 
   ipcMain.on('close', e => {
     if (isMac) {

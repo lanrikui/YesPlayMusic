@@ -251,6 +251,7 @@ export default {
     addToPlaylist: '添加到歌单',
     searchInPlaylist: '歌单内搜索',
     copyUrl: '复制链接',
+    download: '下载',
     openInBrowser: '在浏览器中打开',
     allPlaylists: '全部歌单',
     minePlaylists: '创建的歌单',
@@ -262,6 +263,8 @@ export default {
   toast: {
     savedToPlaylist: '已添加到歌单',
     removedFromPlaylist: '已从歌单中删除',
+    downloadStarted: '已开始下载',
+    downloadFailed: '下载失败，该歌曲可能无法下载',
     savedToMyLikedSongs: '已添加到我喜欢的音乐',
     removedFromMyLikedSongs: '已从喜欢的音乐中删除',
     copied: '已复制',

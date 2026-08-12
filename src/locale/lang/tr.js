@@ -238,6 +238,7 @@ export default {
     addToPlaylist: 'Add to playlist',
     searchInPlaylist: 'Search in playlist',
     copyUrl: 'Copy URL',
+    download: 'Download',
     openInBrowser: 'Open in Browser',
     allPlaylists: 'All Playlists',
     minePlaylists: 'My Playlists',
@@ -249,5 +250,7 @@ export default {
   toast: {
     savedToMyLikedSongs: 'Beğendiğim Müziklere Kaydet',
     removedFromMyLikedSongs: 'Beğendiğim Müziklerden Kaldır',
+    downloadStarted: 'Download started',
+    downloadFailed: 'Download failed, this track may not be available',
   },
 };

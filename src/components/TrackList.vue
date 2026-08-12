@@ -52,6 +52,9 @@
       <div v-show="type !== 'cloudDisk'" class="item" @click="copyLink">{{
         $t('contextMenu.copyUrl')
       }}</div>
+      <div v-show="type !== 'cloudDisk'" class="item" @click="download">{{
+        $t('contextMenu.download')
+      }}</div>
       <div
         v-if="extraContextMenuItem.includes('removeTrackFromCloudDisk')"
         class="item"
@@ -79,6 +82,7 @@ import { mapActions, mapMutations, mapState } from 'vuex';
 import { addOrRemoveTrackFromPlaylist } from '@/api/playlist';
 import { cloudDiskTrackDelete } from '@/api/user';
 import { isAccountLoggedIn } from '@/utils/auth';
+import { downloadTrack } from '@/utils/download';
 
 import TrackListItem from '@/components/TrackListItem.vue';
 import ContextMenu from '@/components/ContextMenu.vue';
@@ -281,6 +285,15 @@ export default {
         })
         .catch(err => {
           this.showToast(`${locale.t('toast.copyFailed')}${err}`);
+        });
+    },
+    download() {
+      downloadTrack(this.rightClickedTrack)
+        .then(() => {
+          this.showToast(locale.t('toast.downloadStarted'));
+        })
+        .catch(() => {
+          this.showToast(locale.t('toast.downloadFailed'));
         });
     },
     removeTrackFromQueue() {
