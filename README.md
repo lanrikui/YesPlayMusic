@@ -1,43 +1,18 @@
-<div align="center">
-	<a href="http://go.warp.dev/YesPlayMusic" target="_blank">
-		<sup>Special thanks to:</sup>
-		<br>
-		<img alt="Warp sponsorship" width="400" src="https://github.com/warpdotdev/brand-assets/blob/main/Github/Sponsor/Warp-Github-LG-03.png?raw=true">
-		<br>
-		<h>Warp is built for coding with multiple AI agents</b>
-		<br>
-		<sup>Available for macOS, Linux and Windows</sup>
-	</a>
-</div>
-
-<br>
-
----
-
 <br />
 <p align="center">
-  <a href="https://music.qier222.com" target="blank">
-    <img src="images/logo.png" alt="Logo" width="156" height="156">
-  </a>
+  <img src="images/logo.png" alt="Logo" width="156" height="156">
   <h2 align="center" style="font-weight: 600">YesPlayMusic</h2>
 
   <p align="center">
     高颜值的第三方网易云播放器
     <br />
-    <a href="https://music.qier222.com" target="blank"><strong>🌎 访问DEMO</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
-    <a href="#%EF%B8%8F-安装" target="blank"><strong>📦️ 下载安装包</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
-    <a href="https://t.me/yesplaymusic" target="blank"><strong>💬 加入交流群</strong></a>
+    <a href="#%EF%B8%8F-安装" target="blank"><strong>📦️ 下载安装包</strong></a>
     <br />
     <br />
   </p>
 </p>
 
-[![Library][library-screenshot]](https://music.qier222.com)
-
-## 全新版本
-
-全新 2.0 Alpha 测试版已发布，欢迎前往 [Releases](https://github.com/qier222/YesPlayMusic/releases) 页面下载。
-当前版本将会进入维护模式，除重大 bug 修复外，不会再更新新功能。
+![Library][library-screenshot]
 
 ## ✨ 特性
 
@@ -63,14 +38,8 @@
 
 ## 📦️ 安装
 
-Electron 版本由 [@hawtim](https://github.com/hawtim) 和 [@qier222](https://github.com/qier222) 适配并维护，支持 macOS、Windows、Linux。
-
-访问本项目的 [Releases](https://github.com/qier222/YesPlayMusic/releases)
+支持 macOS、Windows、Linux，访问本项目的 [Releases](https://github.com/lanrikui/YesPlayMusic/releases)
 页面下载安装包。
-
-- macOS 用户可以通过 Homebrew 来安装：`brew install --cask yesplaymusic`
-
-- Windows 用户可以通过 Scoop 来安装：`scoop install extras/yesplaymusic`
 
 ## 同类项目（排名无先后）
 
@@ -83,8 +52,6 @@ Electron 版本由 [@hawtim](https://github.com/hawtim) 和 [@qier222](https://g
 ## ⚙️ 部署至 Vercel
 
 除了下载安装包使用，你还可以将本项目部署到 Vercel 或你的服务器上。下面是部署到 Vercel 的方法。
-
-本项目的 Demo (https://music.qier222.com) 就是部署在 Vercel 上的网站。
 
 [![Powered by Vercel](https://www.datocms-assets.com/31049/1618983297-powered-by-vercel.svg)](https://vercel.com/?utm_source=ohmusic&utm_campaign=oss)
 
@@ -123,7 +90,7 @@ Electron 版本由 [@hawtim](https://github.com/hawtim) 和 [@qier222](https://g
 2. 克隆本仓库
 
 ```sh
-git clone --recursive https://github.com/qier222/YesPlayMusic.git
+git clone --recursive https://github.com/lanrikui/YesPlayMusic.git
 ```
 
 3. 安装依赖
@@ -188,7 +155,7 @@ YesPlayMusic 地址为 `http://localhost`
 2. 在 Replit shell 中运行以下命令
 
 ```sh
-bash <(curl -s -L https://raw.githubusercontent.com/qier222/YesPlayMusic/main/install-replit.sh)
+bash <(curl -s -L https://raw.githubusercontent.com/lanrikui/YesPlayMusic/master/install-replit.sh)
 ```
 
 3. 首次运行成功后，只需点击绿色按钮 `Run` 即可再次运行
@@ -206,7 +173,7 @@ cd /home/runner/${REPL_SLUG}/music && yarn install && yarn run build
 1. 打包 Electron 需要用到 Node.js 和 Yarn。可前往 [Node.js 官网](https://nodejs.org/zh-cn/) 下载安装包。安装 Node.js
    后可在终端里执行 `npm install -g yarn` 来安装 Yarn。
 
-2. 使用 `git clone --recursive https://github.com/qier222/YesPlayMusic.git` 克隆本仓库到本地。
+2. 使用 `git clone --recursive https://github.com/lanrikui/YesPlayMusic.git` 克隆本仓库到本地。
 
 3. 使用 `yarn install` 安装项目依赖。
 
@@ -249,8 +216,6 @@ yarn netease_api:run
 ```
 
 ## ☑️ Todo
-
-查看 Todo 请访问本项目的 [Projects](https://github.com/qier222/YesPlayMusic/projects/1)
 
 欢迎提 Issue 和 Pull request。
 
