@@ -173,7 +173,9 @@ export function createMenu(win, store) {
           label: 'GitHub',
           click: async () => {
             const { shell } = require('electron');
-            await shell.openExternal('https://github.com/lanrikui/YesPlayMusic');
+            await shell.openExternal(
+              'https://github.com/lanrikui/YesPlayMusic'
+            );
           },
         },
         {
