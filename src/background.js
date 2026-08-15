@@ -282,7 +282,7 @@ class Background {
         .then(result => {
           if (result.response === 0) {
             shell.openExternal(
-              'https://github.com/qier222/YesPlayMusic/releases'
+              'https://github.com/lanrikui/YesPlayMusic/releases'
             );
           }
         });
