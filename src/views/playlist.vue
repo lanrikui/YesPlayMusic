@@ -202,6 +202,9 @@
       <div class="item" @click="searchInPlaylist()">{{
         $t('contextMenu.searchInPlaylist')
       }}</div>
+      <div v-if="isElectron" class="item" @click="downloadPlaylist">{{
+        $t('contextMenu.downloadPlaylist')
+      }}</div>
       <div
         v-if="playlist.creator.userId === data.user.userId"
         class="item"
@@ -229,6 +232,7 @@ import {
 import { getTrackDetail } from '@/api/track';
 import { isAccountLoggedIn } from '@/utils/auth';
 import nativeAlert from '@/utils/nativeAlert';
+import { downloadTracks } from '@/utils/download';
 import locale from '@/locale';
 
 import ButtonTwoTone from '@/components/ButtonTwoTone.vue';
@@ -382,6 +386,9 @@ export default {
         this.playlist.id !== this.data.likedSongPlaylistID
       );
     },
+    isElectron() {
+      return process.env.IS_ELECTRON === true;
+    },
     filteredTracks() {
       return this.tracks.filter(
         track =>
@@ -508,6 +515,30 @@ export default {
     },
     editPlaylist() {
       nativeAlert('此功能开发中');
+    },
+    async downloadPlaylist() {
+      const trackIds = this.playlist.trackIds.map(t => t.id);
+      if (trackIds.length === 0) return;
+
+      this.showToast(locale.t('toast.downloadPlaylistStarted'));
+
+      const chunkSize = 200;
+      const tracks = [];
+      for (let i = 0; i < trackIds.length; i += chunkSize) {
+        const chunk = trackIds.slice(i, i + chunkSize);
+        const data = await getTrackDetail(chunk.join(','));
+        tracks.push(...data.songs);
+      }
+
+      const { failed } = await downloadTracks(tracks);
+
+      this.showToast(
+        failed.length === 0
+          ? locale.t('toast.downloadPlaylistDone')
+          : `${locale.t('toast.downloadPlaylistDone')}，${
+              failed.length
+            } 首下载失败`
+      );
     },
     searchInPlaylist() {
       this.displaySearchInPlaylist =

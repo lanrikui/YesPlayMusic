@@ -239,6 +239,7 @@ export default {
     searchInPlaylist: 'Search in playlist',
     copyUrl: 'Copy URL',
     download: 'Download',
+    downloadPlaylist: 'Download playlist',
     openInBrowser: 'Open in Browser',
     allPlaylists: 'All Playlists',
     minePlaylists: 'My Playlists',
@@ -252,5 +253,7 @@ export default {
     removedFromMyLikedSongs: 'Beğendiğim Müziklerden Kaldır',
     downloadStarted: 'Download started',
     downloadFailed: 'Download failed, this track may not be available',
+    downloadPlaylistStarted: 'Playlist download started',
+    downloadPlaylistDone: 'Playlist download finished',
   },
 };

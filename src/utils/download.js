@@ -28,3 +28,17 @@ export async function downloadTrack(track) {
     window.open(url, '_blank');
   }
 }
+
+// Downloads must run one at a time: the main-process handler resolves off a
+// single 'will-download' listener, so parallel invokes would race on it.
+export async function downloadTracks(tracks) {
+  const failed = [];
+  for (const track of tracks) {
+    try {
+      await downloadTrack(track);
+    } catch (e) {
+      failed.push(track);
+    }
+  }
+  return { failed };
+}
